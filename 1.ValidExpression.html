@@ -22,5 +22,18 @@
     { id: 'test7', value: '3 + +' },
     { id: 'test8', value: '3+' }
   ];
+
+  function tester(tests) {
+    tests.forEach(test => {
+      const isValid = validateMathemathicalExpression(test.value);
+      const statement = isValid ? 'is' : 'is not'
+      let el = document.createElement('p');
+      el.innerHTML = `Test case <b>${test.value}</b> ${statement} valid`;
+      document.body.appendChild(el);
+    });
+  }
+
+  tester(tests);
+
 </script>
 </html>
