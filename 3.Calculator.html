@@ -20,8 +20,8 @@
       <label for="expressionInput">
         Insert your expression
       </label>
-      <input id="expressionInput" type="text" name="expressionInput">
-      <button id="addExpressionButton" type="button" disabled>
+      <input id="expressionInput" onkeyup="digitingExpression(this.value)" type="text" name="expressionInput">
+      <button onclick="onAddBtnClick()" id="addExpressionButton" type="button" disabled>
         Add expression
       </button>
 
@@ -36,3 +36,4 @@
 </body>
 
 </html>
+<script type="text/javascript" src="js/calculator.js"></script>
