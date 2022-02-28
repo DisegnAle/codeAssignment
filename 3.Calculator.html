@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Calculator</title>
+  <style>
+     #helper{
+       display: none;
+       margin-top: 2rem;
+       color: red;
+     }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="form">
+      <label for="expressionInput">
+        Insert your expression
+      </label>
+      <input id="expressionInput" type="text" name="expressionInput">
+      <button id="addExpressionButton" type="button" disabled>
+        Add expression
+      </button>
+
+      <small id="helper">Insert a valid Mathemathical expression</small>
+    </div>
+
+    <div>
+      <p>Last evaluations</p>
+      <ul id="lastEvaluations"></ul>
+    </div>
+  </main>
+</body>
+
+</html>
