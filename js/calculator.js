@@ -1,5 +1,9 @@
 const _evaluator = evaluator();
 
+function digitingExpression(inputValue) {
+  console.log(inputValue);
+}
+
 function getInputValue() {
   return document.getElementById('expressionInput').value;
 }
@@ -8,12 +12,21 @@ function emptyInput() {
   document.getElementById('expressionInput').value = '';
 }
 
+function removeOldestEvaluation(lastEvaluationsGroup) {
+  const lastEvaluationsItems = lastEvaluationsGroup.getElementsByTagName('li');
+  const oldestEvaluationItem = lastEvaluationsItems[0];
+  lastEvaluationsGroup.removeChild(oldestEvaluationItem);
+}
+
 function onAddBtnClick() {
   const lastEvaluationsGroup = document.getElementById('lastEvaluations');
   const inputValue = getInputValue();
   const evaluation = _evaluator.mathEvaluator(inputValue);
   addExpressionToDom(lastEvaluationsGroup, inputValue, evaluation);
   emptyInput();
+  if (lastEvaluationsGroup.childNodes.length === 6) {
+    removeOldestEvaluation(lastEvaluationsGroup);
+  }
 }
 
 function addExpressionToDom(lastEvaluationsGroup, inputValue, evaluation){
