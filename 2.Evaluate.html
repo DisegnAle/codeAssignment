@@ -11,8 +11,19 @@
 <body>
 
 </body>
+<script src="js/evaluator.js"></script>
 <script>
   const formula = 'sin(30) + cos(20)';
+  const _evaluator = evaluator();
+  const evaluation = _evaluator.mathEvaluator(formula);
+
+  function printResult(expression, evaluation) {
+    let el = document.createElement('p');
+    el.innerHTML = `<b>${expression}</b> =  ${evaluation}`;
+    document.body.appendChild(el);
+  }
+
+  printResult(formula, evaluation);
 </script>
 
 </html>
