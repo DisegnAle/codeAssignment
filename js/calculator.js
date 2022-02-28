@@ -1,7 +1,24 @@
 const _evaluator = evaluator();
 
 function digitingExpression(inputValue) {
-  console.log(inputValue);
+  document.getElementById('helper').style.display = 'none';
+  const isValid = validateMathemathicalExpression(inputValue);
+  if(!isValid){
+    setTimeout(()=>{
+      document.getElementById('helper').style.display = 'block';
+    },2000)
+  }
+
+  enableAddButton(inputValue, isValid);
+}
+
+function enableAddButton(inputValue, expressionValid) {
+  const inputIsNotEmpty = inputValue.trim().length > 0;
+  if (inputIsNotEmpty && expressionValid === true) {
+    document.getElementById('addExpressionButton').disabled = false;
+  } else {
+    document.getElementById('addExpressionButton').disabled = true;
+  }
 }
 
 function getInputValue() {
