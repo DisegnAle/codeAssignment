@@ -1,8 +1,19 @@
+const _evaluator = evaluator();
+
+function getInputValue() {
+  return document.getElementById('expressionInput').value;
+}
+
+function emptyInput() {
+  document.getElementById('expressionInput').value = '';
+}
+
 function onAddBtnClick() {
   const lastEvaluationsGroup = document.getElementById('lastEvaluations');
   const inputValue = getInputValue();
   const evaluation = _evaluator.mathEvaluator(inputValue);
   addExpressionToDom(lastEvaluationsGroup, inputValue, evaluation);
+  emptyInput();
 }
 
 function addExpressionToDom(lastEvaluationsGroup, inputValue, evaluation){
